@@ -65,14 +65,14 @@ with mp_hands.Hands(min_detection_confidence=0.85, min_tracking_confidence=0.5, 
                     ## Checking which fingers are up
                     fingers = []
                     # Checking the thumb
-                    if points[tipIds[0]][0] &lt; points[tipIds[0] - 1][0]:
+                    if points[tipIds[0]][0] < points[tipIds[0] - 1][0]:
                         fingers.append(1)
                     else:
                         fingers.append(0)
 
                     # The rest of the fingers
                     for id in range(1, 5):
-                        if points[tipIds[id]][1] &lt; points[tipIds[id] - 2][1]:
+                        if points[tipIds[id]][1] < points[tipIds[id] - 2][1]:
                             fingers.append(1)
                         else:
                             fingers.append(0)
